@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Group Access — Premium Required</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1621;--panel:#17212b;--muted:#8b9baa;--blue:#3390ec;--line:#263746}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(145deg,#0e1621,#152536);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#f5f7fa;display:grid;place-items:center;padding:22px}
+.card{width:min(100%,420px);background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 24px 70px #0008}
+.top{padding:22px 24px 18px;text-align:center;border-bottom:1px solid var(--line)}
+.logo{width:58px;height:58px;border-radius:50%;background:var(--blue);display:grid;place-items:center;margin:0 auto 12px;font-size:27px}
+h1{font-size:22px;margin:0 0 5px}.sub{color:var(--muted);font-size:14px}
+main{padding:24px}.lock{font-size:40px;text-align:center;margin:0 0 8px}
+h2{text-align:center;font-size:19px;margin:0 0 8px}.desc{text-align:center;color:#b8c5d1;margin:0 0 22px;font-size:14px}
+.details{background:#101a24;border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:18px}
+.item{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px}.item span:first-child{color:var(--muted)}
+.price{font-size:20px;font-weight:700}
+button{width:100%;border:0;border-radius:12px;background:var(--blue);color:white;font-weight:700;font-size:16px;padding:14px;cursor:pointer}
+button:hover{filter:brightness(1.08)}.fine{text-align:center;color:var(--muted);font-size:11px;margin:14px 4px 0}
+.reveal{display:none;text-align:center;padding:18px 14px 4px}.reveal.show{display:block}.reveal strong{display:block;font-size:23px;margin-bottom:7px}.reveal p{color:#b8c5d1;margin:0}
+.footer{text-align:center;padding:0 20px 18px;color:#718394;font-size:11px}
+</style>
+</head>
+<body>
+<section class="card" aria-label="Prank group access screen">
+  <header class="top">
+    <div class="logo">➤</div>
+    <h1>Private Group Access</h1>
+    <div class="sub">Group membership notice</div>
+  </header>
+  <main>
+    <div class="lock">🔒</div>
+    <h2>Premium access required</h2>
+    <p class="desc">This group is currently showing a fictional membership prompt. Tap below to see what happens.</p>
+    <div class="details">
+      <div class="item"><span>Group</span><strong>VIP Members</strong></div>
+      <div class="item"><span>Access status</span><strong>Restricted</strong></div>
+      <div class="item"><span>Unlock price</span><strong class="price">€0.00</strong></div>
+    </div>
+    <button id="unlock" type="button">Unlock access</button>
+    <div id="reveal" class="reveal" role="status" aria-live="polite">
+      <strong>😂 GOT YOU!</strong>
+      <p>It was a prank. No payment, subscription, or personal information required.</p>
+    </div>
+    <p class="fine">Demo prank screen only · Not affiliated with Telegram · No payments or data collection</p>
+  </main>
+  <div class="footer">A harmless group-chat joke</div>
+</section>
+<script>
+document.getElementById('unlock').addEventListener('click',function(){
+  document.getElementById('reveal').classList.add('show');
+  this.textContent='Access unlocked';
+  this.disabled=true;
+  this.style.opacity='.7';
+});
+</script>
+</body>
+</html>
